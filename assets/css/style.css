@@ -13,6 +13,10 @@ button {
   border: none;
 }
 
+html, body {
+  overflow-x: hidden; /* Empêche le défilement horizontal */
+}
+
 body {
   background-color: #F4F4F2;
   font-family: "inter", sans-serif;
@@ -26,10 +30,15 @@ body .img {
 body section {
   padding: 100px 100px;
 }
+body section .flou {
+  padding: 16px 32px;
+  backdrop-filter: blur(2.5px);
+}
 body .buttons {
   margin-top: 2rem;
   display: flex;
   gap: 1rem;
+  justify-content: center;
 }
 body .button {
   position: relative;
@@ -153,7 +162,11 @@ header nav ul li a:hover {
   text-decoration: underline;
 }
 header img {
-  height: 100%;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  height: 30px;
 }
 
 .loader {
@@ -222,19 +235,28 @@ header img {
   justify-content: end;
   gap: 10px;
 }
+.chat-container .chat-body .profil {
+  width: 40px;
+  height: 40px;
+  overflow: hidden;
+  border-radius: 50%;
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+}
 .chat-container .chat-body .profil img {
+  width: 100%;
+  height: 100%;
   object-fit: contain;
 }
 .chat-container .chat-body .chat-messages {
   display: flex;
   flex-direction: column;
+  gap: 10px;
   align-items: flex-end;
 }
 .chat-container .chat-body .chat-messages .bot-message {
   box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
   padding: 10px;
   border-radius: 8px 8px 0px 8px;
-  margin: 5px 0;
   max-width: 250px;
   background-color: #fff;
 }
@@ -260,7 +282,7 @@ header img {
   position: fixed;
   top: 0;
   left: 0;
-  width: 100vw;
+  width: 100%;
   height: 100vh;
   display: flex;
   justify-content: center;
@@ -276,6 +298,7 @@ header img {
 .hero {
   text-align: center;
   padding-top: 200px;
+  height: 100vh;
 }
 .hero h1 {
   margin-bottom: 1rem;
@@ -299,7 +322,7 @@ header img {
   margin-top: 80px;
   margin-right: 0;
   margin-left: auto;
-  width: 40%;
+  width: 30%;
   display: flex;
   flex-direction: column;
   align-items: flex-start;
@@ -339,7 +362,7 @@ header img {
   flex-direction: column;
   gap: 24px;
   margin-bottom: 1.5rem;
-  width: 30%;
+  width: 25%;
 }
 .stats .content .item .item-content .stat {
   font-size: 100px;
@@ -360,8 +383,9 @@ header img {
 .hope {
   background: url("../pictures/breasy-background-clair.png") center center/90% auto no-repeat;
 }
-.hope .subtitle {
+.hope .subtitle, .hope h2 {
   text-align: center;
+  width: 100%;
 }
 .hope .content {
   font-family: "cofo-sans-mono-variable", sans-serif;
@@ -413,6 +437,7 @@ header img {
 }
 
 .flavour {
+  background-color: #F4F4F2;
   padding-left: 0;
   padding-right: 0;
   text-align: center;
@@ -471,6 +496,9 @@ header img {
   object-fit: cover;
 }
 
+.testimonial {
+  background-color: #F4F4F2;
+}
 .testimonial h2 {
   color: #3F6F7F;
 }
@@ -489,14 +517,11 @@ header img {
   opacity: 0.46;
   cursor: auto;
 }
-.testimonial .carousel-frame .arrow.disabled:hover {
-  transform: none;
+.testimonial .carousel-frame .arrow.left:not(.disabled):hover {
+  transform: translateX(-10px);
 }
-.testimonial .carousel-frame .arrow.left:hover {
-  transform: translateX(-5px);
-}
-.testimonial .carousel-frame .arrow.right:hover {
-  transform: translateX(5px);
+.testimonial .carousel-frame .arrow.right:not(.disabled):hover {
+  transform: translateX(10px);
 }
 .testimonial .carousel-frame .content {
   width: 100% s;
@@ -543,6 +568,28 @@ header img {
   font-size: 20px;
   font-weight: 400;
   line-height: 150%;
+}
+
+.twist {
+  background-color: #000;
+  height: 100vh;
+  display: flex;
+  flex-direction: column;
+  gap: 32px;
+  align-items: center;
+  justify-content: center;
+}
+.twist h2, .twist p {
+  color: #fff;
+}
+.twist p {
+  text-align: center;
+  width: 70%;
+  font-family: "cofo-sans-mono-variable", sans-serif;
+  font-size: 24px;
+  font-style: normal;
+  font-weight: 500;
+  line-height: 130%;
 }
 
 footer {
@@ -602,6 +649,20 @@ footer .bottom a {
 }
 footer .bottom a:hover {
   text-decoration: underline;
+}
+
+.animate {
+  opacity: 0; /* Initialement invisible */
+  transform: translateX(50px); /* Décalage à droite pour les textes à gauche */
+}
+
+.animate.left {
+  transform: translateX(-50px); /* Décalage à gauche pour les textes à droite */
+}
+
+.animate-first {
+  opacity: 0;
+  transform: translateX(50px);
 }
 
 /*# sourceMappingURL=style.css.map */

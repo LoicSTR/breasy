@@ -9,9 +9,9 @@
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&display=swap" rel="stylesheet">
-    <script src="https://unpkg.com/split-type"></script>
+    <!-- <script src="https://unpkg.com/split-type"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.11.4/gsap.min.js"></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.11.4/ScrollTrigger.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.11.4/ScrollTrigger.min.js"></script> -->
     <title>Breasy</title>
 </head>
 <body>
@@ -36,12 +36,13 @@
             <button id="button-enter" class="button white"><span>Entrer</span></button>
         </div>
         <div class="chat-container" id="chatContainer">
+            <audio id="chatbotSound" src="assets/sound/notif.mp3" preload="auto"></audio>
             <audio id="chatbotSound1" src="assets/sound/cough1.mp3" preload="auto"></audio>
             <audio id="chatbotSound2" src="assets/sound/cough2.mp3" preload="auto"></audio>
             <audio id="chatbotSound3" src="assets/sound/cough3.mp3" preload="auto"></audio>
             <div class="chat-body">
                 <div class="chat-messages" id="chatMessages">
-                    <div class="bot-message">Hello! Je suis Bob. Comment puis-je t’aider ?</div>
+                    <div class="bot-message">Hello ! Je suis Bob. Comment puis-je t’aider ?</div>
                 </div>
                 <div class="profil"><img src="assets/pictures/icon-bob-stroke-black.svg" alt="Photo de profil Bob"></div>
             </div>
@@ -49,48 +50,50 @@
         <div class="image-container">
             <img id="animation" src="Sc2/Vento0001.png" alt="Animation en arrière-plan" />
         </div>
-        <section class="hero content">
-            <h1 animate>Inhalo-cigarette Breasy</h1>
-            <p class="subtitle" animate>(Breath easy, smoke hard)</p>
+        <section class="hero content" >
+            <h1 class="animate first">Inhalo-cigarette Breasy</h1>
+            <p class="subtitle animate first">(Breath easy, smoke hard)</p>
         </section>
         <section class="product" id="product">
-            <h2 animate>Découvrez Breasy</h2>
-            <p class="subtitle" animate>La première inhalo-cigarette<br>qui révolutionne le plaisir de fumer</p>
+            <div class="flou"><h2 class="animate first">Découvrez Breasy</h2>
+            <p class="subtitle animate first">La première inhalo-cigarette<br>qui révolutionne le plaisir de fumer</p></div>
+            
             <div class="content">
-                <p animate>Fini les choix difficiles entre plaisir et santé : Breasy vous offre une expérience de fumée équilibrée, alliant bien-être respiratoire et plaisir sans compromis.</p>
+                <p class="animate">Fini les choix difficiles entre plaisir et santé : Breasy vous offre une expérience de fumée équilibrée, alliant bien-être respiratoire et plaisir sans compromis.</p>
                 <button class="button"><span>Ça existe vraiment</span></button>
             </div>
         </section>
-        <section class="product-2">
+        <section class="product-2" >
 
         </section>
-        <section class="stats">
+        <section class="stats" >
             <div class="content">
                 <div class="item">
                     <div class="item-content">
-                       <div class="stat">10%</div>
-                        <div class="text">
-                            <h3 class="line">Population française</h3>
-                            <p class="line">Environ 10 % de la population française est affectée par l'asthme, <b>soit 10 000 personnes</b></p>
+                       <div class="stat animate left">20%</div>
+                        <div class="text animate left">
+                            <h3>Population française</h3>
+                            <p>Plus de 20 % de la population française est affectée par l'asthme, soit environ <b>12 millions de personnes.</b></p>
                         </div>
                     </div>
                 </div>
                 <div class="item">
                     <div class="item-content">
-                        <div class="stat">30%</div>
-                         <div class="text">
-                             <h3 class="line">Population française</h3>
-                             <p class="line">Environ 10 % de la population française est affectée par l'asthme, <b>soit 10 000 personnes</b></p>
+                        <div class="stat animate">30%</div>
+                         <div class="text animate">
+                             <h3>Asthmatique</h3>
+                             <p>Bien que près de 30 % des asthmatiques soient fumeurs, ils sont nombreux à chercher à arrêter pour réduire leurs symptômes.<b>Mais pourquoi arrêter quand Breasy existe ?</b></p>
                          </div>
                      </div>
                     
                 </div>
                 <div class="item">
                     <div class="item-content">
-                        <div class="stat">1/5</div>
-                         <div class="text">
-                             <h3 class="line">Population française</h3>
-                             <p class="line">Environ 10 % de la population française est affectée par l'asthme, <b>soit 10 000 personnes</b></p>
+                        <div class="stat animate left">1/5</div>
+                         <div class="text animate left">
+                             <h3>Population française</h3>
+                             <p>Chaque année, les crises d’asthme empêche 1 français sur 5 de fumer.</p>
+                             <p>Au cours de sa vie <b>1 fumeur sur 3 se verra contraint d’arrêter à cause de problèmes respiratoires.</b></p>
                          </div>
                      </div>
                 </div>
@@ -101,23 +104,24 @@
                     </div>
             
         </section>
-        <section class="hope" id="hope">
-            <h2>L'espoir d'un souffle meilleur</h1>
-            <p class="subtitle">Du cancer à Breasy</p>
+        <section class="hope" id="hope" >
+            <div class="title animate first flou">
+               <h2>L'espoir d'un souffle meilleur</h2>
+                <p class="subtitle">Du cancer à Breasy</p> 
+            </div>
             <div class="content left">
-                <div class="text">
-                    <p>Breazy est bien plus qu'un simple produit. L'idée a germé il y a des années, inspirée par des souvenirs intenses et profondément personnels. </p>
-                        
+                <div class="text animate left">
+                    <p>Breazy est bien plus qu'un simple produit. L'idée a germé il y a des années, inspirée par des souvenirs intenses et profondément personnels. </p>      
                 </div>
                 <img src="assets/pictures/pdg.jpg" alt="Photo du pdg" class="pdg">
             </div>
             <div class="content">
-                <div class="text">
+                <div class="text animate">
                     <p>Mon grand-père, fumeur depuis toujours et asthmatique acharné, avait ce rituel quotidien : d'un côté, sa cigarette, de l'autre, sa ventoline posée sur la table. </p>
                 </div>
 
                 </div>
-                <p class="center">Entre chaque bouffée de tabac, il inspirait ce qu’il appelait "son souffle de secours". J’entend encore ma grand mère lui dire : “Il faut que tu arrêtes de fumer Serge !”.
+                <p class="center animate left">Entre chaque bouffée de tabac, il inspirait ce qu’il appelait "son souffle de secours". J’entend encore ma grand mère lui dire : “Il faut que tu arrêtes de fumer Serge !”.
                 À mes yeux, ces deux objets formaient un symbole de sa résilience, de son courage, de son attachement à chaque inspiration. Mais c’est bien plus tard que Breazy est vraiment né.</p>
             </div>
             <div class="buttons">
@@ -126,12 +130,14 @@
             </div>
         </section>
         <section class="continue">
-            <h2>Continuer de <b>fumer</b> quelque<br> soit votre état de <b>santé</b>...</h2>
+            <div class="flou">
+                <h2 class="animate first">Continuer de <b>fumer</b> quelque<br> soit votre état de <b>santé</b>...</h2>
+            </div>
             <button class="button white"><span>Commander maintenant</span></button>
         </section>
         <section class="flavour" id="flavour">
-            <h2>Fumez, profitez et savourez</h2>
-            <p class="subtitle">Découvrez l’ensemble de nos saveurs disponibles</p>
+            <h2 class="animate first">Fumez, profitez et savourez</h2>
+            <p class="subtitle animate first">Découvrez l’ensemble de nos saveurs disponibles</p>
             <div class="container">
                 <div class="item flavour-item" id="cerise">
                     <video class="smoke-video" muted loop>
@@ -162,8 +168,8 @@
                 </div>
             </div>
         </section>
-        <section class="testimonial" id="testimonial">
-            <h2>Ils ont tous pu continuer à fumer</h2>
+        <section class="testimonial" id="testimonial" >
+            <div class="flou"><h2 class="animate first">Ils ont tous pu continuer à fumer</h2></div>
             <div class="carousel-frame">
                 <img src="assets/pictures/left-arrow.svg" alt="Flèche gauche" class="arrow left">
                 <div class="content">
@@ -293,6 +299,11 @@
                 <img src="assets/pictures/right-arrow.svg" alt="Flèche droite" class="arrow right">
             </div>
         </section>
+        <section class="twist">
+            <h2>Ou sinon on s’arrête là...</h2>
+            <p>Soyons sérieux, le tabac est mauvais pour la santé. 8 millions de personnes en meurt chaque année. La seule solution est d’arrêter. Nous sommes là pour vous aider.</p>
+            <button class="button white"><span>Je veux arrêter</span></button>
+        </section>
     </main>
     <footer>
         <div class="top">
@@ -322,7 +333,61 @@
             <a href="#">Paramètres de cookies</a>
         </div>
     </footer>    
-    <script src="assets/js/index.js"></script>
+    <script type="module"src="assets/js/index.js"></script>
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.11.4/gsap.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.11.4/ScrollTrigger.min.js"></script>
+    <script src="https://unpkg.com/split-type"></script>
+    
+    <script>
+    let typeSplit = new SplitType('.animate', {
+      types: 'lines, words, chars',
+      tagName: 'span'
+    })
+    
+    const buttonEnter = document.getElementById('button-enter');
+
+    buttonEnter.addEventListener("click", () => {
+        gsap.registerPlugin(ScrollTrigger);
+
+        // Animer les textes
+        document.querySelectorAll('.animate.first').forEach((element) => {
+            gsap.fromTo(element, {
+                opacity: 0, // Commencer à une opacité de 0
+            }, {
+                opacity: 1, // Terminer à une opacité de 1
+                duration: 1.2, // Durée de l'animation
+                ease: 'power2.out', // Type d'accélération
+                scrollTrigger: {
+                    trigger: element, // Déclencheur basé sur l'élément
+                    start: 'top 80%', // Démarrer l'animation lorsque le haut de l'élément atteint 80% de la fenêtre
+                    toggleActions: 'play none none none', // Joue l'animation uniquement une fois
+                }
+            });
+        });
+    });
+    </script>
+    <script>
+        gsap.registerPlugin(ScrollTrigger);
+
+        // Animer les textes
+        document.querySelectorAll('.animate:not(.first)').forEach((element) => {
+            gsap.fromTo(element, {
+                opacity: 0, // Commencer à une opacité de 0
+                x: element.classList.contains('left') ? -50 : 50, // Décalage à gauche ou à droite
+            }, {
+                opacity: 1, // Terminer à une opacité de 1
+                x: 0, // Retourner à la position d'origine
+                duration: 1.2, // Durée de l'animation
+                ease: 'power2.out', // Type d'accélération
+                scrollTrigger: {
+                    trigger: element, // Déclencheur basé sur l'élément
+                    start: 'top 80%', // Démarrer l'animation lorsque le haut de l'élément atteint 80% de la fenêtre
+                    toggleActions: 'play none none none', // Joue l'animation uniquement une fois
+                }
+            });
+        });
+    </script>
     <script>
         gsap.registerPlugin(ScrollTrigger);
     

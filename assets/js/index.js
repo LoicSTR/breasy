@@ -1,8 +1,3 @@
-// import SplitType from 'split-type';
-// import gsap from 'gsap';
-// import { ScrollTrigger } from 'gsap/ScrollTrigger';
-
-// gsap.registerPlugin(ScrollTrigger);
 
 const track = document.querySelector('.carousel');
 const items = Array.from(track.children);
@@ -51,6 +46,7 @@ updateCarousel();
 const loader = document.getElementById("loader");
 const chatbotContainer = document.getElementById("chatContainer");
 const chatbotMessages = document.getElementById("chatMessages");
+const chatbotSound = document.getElementById("chatbotSound");
 const chatbotSound1 = document.getElementById("chatbotSound1");
 const chatbotSound2 = document.getElementById("chatbotSound2");
 const chatbotSound3 = document.getElementById("chatbotSound3");
@@ -84,7 +80,7 @@ function sendMessage(text) {
   messageElement.innerHTML = text;
   chatbotMessages.appendChild(messageElement);
   chatbotMessages.scrollTop = chatbotMessages.scrollHeight;
-  playSound(chatbotSound2);
+  playSound(chatbotSound3);
 }
 
 function sendMessagesAtIntervals(messagesToSend) {
@@ -133,7 +129,7 @@ buttonEnter.addEventListener("click", () => {
     loader.style.display = "none";
     setTimeout(() => {
         chatbotContainer.classList.add("visible");
-        playSound(chatbotSound1);
+        playSound(chatbotSound);
       }, 5000);
 });
 
@@ -159,40 +155,3 @@ items.forEach(item => {
         smokeVideo.currentTime = 0;
     });
 });
-
-// script.js
-const itemsFlavour = document.querySelectorAll('.flavour-item');
-
-items.forEach(item => {
-    const smokeVideo = itemsFlavour.querySelector('.smoke-video');
-
-    item.addEventListener('mouseenter', () => {
-        smokeVideo.play(); // Joue la vidéo au survol
-        smokeVideo.style.display = 'block'; // Affiche la vidéo
-    });
-
-    item.addEventListener('mouseleave', () => {
-        smokeVideo.pause(); // Met la vidéo en pause lorsque le curseur quitte l'item
-        smokeVideo.currentTime = 0; // Remet la vidéo au début
-        smokeVideo.style.display = 'none'; // Masque la vidéo
-    });
-});
-
-
-let typeSplit = new SplitType('[animate]', {
-  types: 'lines, words, chars',
-  tagName: 'span'
-})
-
-gsap.from('[animate] .line', {
-  opacity: 0.3,
-  duration: 1.2,
-  ease: 'power1.out',
-  stagger: 0.3,
-  
-  scrollTrigger: {
-    trigger: '[animate]',
-    start: 'top center',
-    scrub: true
-  }
-})

@@ -12,6 +12,9 @@ a {
 button {
     border: none;
 }
+html, body {
+    overflow-x: hidden; /* Empêche le défilement horizontal */
+}
 
 body {
     background-color: $background;
@@ -24,11 +27,16 @@ body {
     }
     section {
         padding: 100px 100px;
+        .flou {
+            padding: 16px 32px;
+            backdrop-filter: blur(2.5px);
+        }
     }
     .buttons {
         margin-top: 2rem;
         display: flex;
         gap: 1rem;
+        justify-content: center;
     }
     .button {
         position: relative;
@@ -154,7 +162,11 @@ header {
         }
     }
     img {
-        height: 100%;
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+        height: 30px;
     }
 }
 .loader {
@@ -222,19 +234,26 @@ header {
         justify-content: end;
         gap: 10px;
         .profil {
+            width: 40px;
+            height: 40px;
+            overflow: hidden;
+            border-radius: 50%;
+            box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
             img {
+                width: 100%;
+                height: 100%;
                 object-fit: contain;
             }
         }
         .chat-messages {
             display: flex;
             flex-direction: column;
+            gap: 10px;
             align-items: flex-end;
             .bot-message {
                 box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
                 padding: 10px;
                 border-radius: 8px 8px 0px 8px;
-                margin: 5px 0;
                 max-width: 250px;
                 background-color: #fff;
                 &:nth-child(2) {
@@ -263,7 +282,7 @@ header {
     position: fixed;
     top: 0;
     left: 0;
-    width: 100vw;
+    width: 100%;
     height: 100vh;
     display: flex;
     justify-content: center;
@@ -278,6 +297,7 @@ header {
 .hero {
     text-align: center;
     padding-top: 200px;
+    height: 100vh;
     h1 {
         margin-bottom: 1rem;
     }
@@ -301,7 +321,7 @@ header {
         margin-top: 80px;
         margin-right: 0;
         margin-left: auto;
-        width: 40%;
+        width: 30%;
         display: flex;
         flex-direction: column;
         align-items: flex-start;
@@ -339,8 +359,7 @@ header {
                 gap: 24px;
                 // align-items: center;
                 margin-bottom: 1.5rem;
-                width: 30%;
-        
+                width: 25%;
                 .stat {
                     font-size: 100px;
                     font-style: normal;
@@ -365,8 +384,9 @@ header {
 }
 .hope {
     background: url("../pictures/breasy-background-clair.png") center center / 90% auto no-repeat;
-    .subtitle {
+    .subtitle, h2 {
         text-align: center;
+        width: 100%;
     }
     .content {
         font-family: "cofo-sans-mono-variable", sans-serif;
@@ -417,6 +437,7 @@ header {
     }
 }
 .flavour {
+    background-color: $background;
     padding-left: 0;
     padding-right: 0;
     text-align: center;
@@ -478,6 +499,7 @@ header {
     }
 }
 .testimonial {
+    background-color: $background;
     h2 {
         color: $primary;
     }
@@ -493,18 +515,18 @@ header {
             &.disabled {
                 opacity: 0.46;
                 cursor: auto;
+                // &:hover {
+                //     transform: none;
+                // }
+            }
+            &.left:not(.disabled) {
                 &:hover {
-                    transform: none;
+                    transform: translateX(-10px);
                 }
             }
-            &.left {
+            &.right:not(.disabled) {
                 &:hover {
-                    transform: translateX(-5px);
-                }
-            }
-            &.right {
-                &:hover {
-                    transform: translateX(5px);
+                    transform: translateX(10px);
                 }
             }
         }
@@ -558,6 +580,27 @@ header {
         }
     }
     
+}
+.twist {
+    background-color: #000;
+    height: 100vh;
+    display: flex;
+    flex-direction: column;
+    gap: 32px;
+    align-items: center;
+    justify-content: center;
+    h2, p {
+        color: #fff;
+    }
+    p {
+        text-align: center;
+        width: 70%;
+        font-family: "cofo-sans-mono-variable", sans-serif;
+        font-size: 24px;
+        font-style: normal;
+        font-weight: 500;
+        line-height: 130%;
+    }
 }
 footer {
     background-color: #000;
@@ -620,4 +663,17 @@ footer {
             }
         }
     }
+}
+
+.animate {
+    opacity: 0; /* Initialement invisible */
+    transform: translateX(50px); /* Décalage à droite pour les textes à gauche */
+}
+
+.animate.left {
+    transform: translateX(-50px); /* Décalage à gauche pour les textes à droite */
+}
+.animate-first {
+    opacity: 0;
+    transform: translateX(50px);
 }
