@@ -1,0 +1,19 @@
+{
+  "name": "hackhaton",
+  "version": "1.0.0",
+  "main": "index.js",
+  "scripts": {
+    "sass:watch": "sass --watch assets/scss:assets/css"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "description": "",
+  "devDependencies": {
+    "vite": "^5.4.10"
+  },
+  "dependencies": {
+    "gsap": "^3.12.5",
+    "three": "^0.169.0"
+  }
+}
