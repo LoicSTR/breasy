@@ -64,6 +64,22 @@
             </div>
         </section>
         <section class="product-2" >
+            <div class="left-top">
+                <p class="animate left">Apaise les <b>voies<br>respiratoires</b></p>
+                <img src="assets/pictures/fleche-left.svg" alt="Flèche gauche" class="fleche-left">
+            </div>
+            <div class="right-top">
+                <p class="animate">Combine le goût mythique<br>du <b>tabac</b> et la <b>fraicheur</b><br>de la ventoline</p>
+                <img src="assets/pictures/fleche-right.svg" alt="Flèche droite" class="fleche-right">
+            </div>
+            <div class="left-bottom">
+                <p class="animate left">Une <b>bouffée de vie</b><br>à chaque instant</p>
+                <img src="assets/pictures/fleche-left.svg" alt="Flèche gauche" class="fleche-left">
+            </div>
+            <div class="right-bottom">
+                <p class="animate">Un <b>embout<br>filtrant</b> innovant</p>
+                <img src="assets/pictures/fleche-right.svg" alt="Flèche droite" class="fleche-right">
+            </div>
 
         </section>
         <section class="stats" >
@@ -111,7 +127,7 @@
             </div>
             <div class="content left">
                 <div class="text animate left">
-                    <p>Breazy est bien plus qu'un simple produit. L'idée a germé il y a des années, inspirée par des souvenirs intenses et profondément personnels. </p>      
+                    <p>Breasy est bien plus qu'un simple produit. L'idée a germé il y a des années, inspirée par des souvenirs intenses et profondément personnels. </p>      
                 </div>
                 <img src="assets/pictures/pdg.jpg" alt="Photo du pdg" class="pdg">
             </div>
@@ -122,14 +138,14 @@
 
                 </div>
                 <p class="center animate left">Entre chaque bouffée de tabac, il inspirait ce qu’il appelait "son souffle de secours". J’entend encore ma grand mère lui dire : “Il faut que tu arrêtes de fumer Serge !”.
-                À mes yeux, ces deux objets formaient un symbole de sa résilience, de son courage, de son attachement à chaque inspiration. Mais c’est bien plus tard que Breazy est vraiment né.</p>
+                À mes yeux, ces deux objets formaient un symbole de sa résilience, de son courage, de son attachement à chaque inspiration. Mais c’est bien plus tard que Breasy est vraiment né.</p>
             </div>
             <div class="buttons">
                 <button class="button"><span>Je n'y crois pas</span></button>
                 <button class="button secondary"><span>Non</span></button>
             </div>
         </section>
-        <section class="continue">
+        <section class="continue stop">
             <div class="flou">
                 <h2 class="animate first">Continuer de <b>fumer</b> quelque<br> soit votre état de <b>santé</b>...</h2>
             </div>
@@ -403,8 +419,8 @@
     
     let frameNumber = 0;
     const fps = 30; // Frames par seconde
-    const totalScrollDistance = 4000; // Distance totale de défilement (en pixels ou unité de mesure) 
-    
+    const totalScrollDistance = 4000; // Distance totale de défilement (en pixels ou unité de mesure)
+
     // Animation de l'image fixe en fonction du défilement dans la section `.content`
     gsap.to({}, {
         scrollTrigger: {

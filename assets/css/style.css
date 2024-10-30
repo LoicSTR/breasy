@@ -29,6 +29,7 @@ body .img {
 }
 body section {
   padding: 100px 100px;
+  z-index: 2;
 }
 body section .flou {
   padding: 16px 32px;
@@ -100,6 +101,7 @@ body .button span {
   z-index: 10;
 }
 body h1, body h2, body h3, body h4, body h5, body h6, body .button, body .stat, body .subtitle {
+  z-index: 2;
   font-family: "cofo-sans-mono-variable", sans-serif;
 }
 body h1 {
@@ -287,7 +289,7 @@ header img {
   display: flex;
   justify-content: center;
   align-items: center;
-  z-index: -1; /* Place l'image derrière le contenu */
+  z-index: 0; /* Place l'image derrière le contenu */
 }
 .image-container img {
   width: 100%; /* Ajustez la taille de l'image */
@@ -333,7 +335,46 @@ header img {
 .product-2 {
   background: url("../pictures/breasy-background.png") center center/90% auto no-repeat;
   background-color: #000;
-  height: 650px;
+  height: 100vh;
+  z-index: -1;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  gap: 30px;
+}
+.product-2 img {
+  margin-top: 1rem;
+}
+.product-2 img.fleche-left {
+  transform: translateX(30%);
+}
+.product-2 img.fleche-right {
+  transform: translateX(-30%);
+}
+.product-2 p {
+  color: #fff;
+  font-family: cofo-sans-mono-variable, sans-serif;
+  font-size: 24px;
+  line-height: 150%; /* 36px */
+  letter-spacing: -0.528px;
+}
+.product-2 .left-top {
+  position: relative;
+  left: 10%;
+}
+.product-2 .right-top {
+  position: relative;
+  right: 5%;
+  text-align: right;
+}
+.product-2 .left-bottom {
+  position: relative;
+  left: 5%;
+}
+.product-2 .right-bottom {
+  position: relative;
+  right: 10%;
+  text-align: right;
 }
 
 .stats {
@@ -428,6 +469,7 @@ header img {
 .continue {
   background-color: #000;
   text-align: center;
+  z-index: 3;
 }
 .continue h2 {
   color: #fff;
@@ -441,6 +483,7 @@ header img {
   padding-left: 0;
   padding-right: 0;
   text-align: center;
+  z-index: 3;
 }
 .flavour h2 {
   color: #3F6F7F;
@@ -498,6 +541,7 @@ header img {
 
 .testimonial {
   background-color: #F4F4F2;
+  z-index: 3;
 }
 .testimonial h2 {
   color: #3F6F7F;
@@ -578,6 +622,7 @@ header img {
   gap: 32px;
   align-items: center;
   justify-content: center;
+  z-index: 3;
 }
 .twist h2, .twist p {
   color: #fff;

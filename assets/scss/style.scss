@@ -27,6 +27,7 @@ body {
     }
     section {
         padding: 100px 100px;
+        z-index: 2;
         .flou {
             padding: 16px 32px;
             backdrop-filter: blur(2.5px);
@@ -98,6 +99,7 @@ body {
         }
     }
     h1, h2, h3, h4, h5, h6, .button, .stat, .subtitle {
+        z-index: 2;
         font-family: "cofo-sans-mono-variable", sans-serif;
     }
     h1 {
@@ -287,7 +289,7 @@ header {
     display: flex;
     justify-content: center;
     align-items: center;
-    z-index: -1; /* Place l'image derrière le contenu */
+    z-index: 0; /* Place l'image derrière le contenu */
     img {
         width: 100%; /* Ajustez la taille de l'image */
         height: auto;
@@ -332,7 +334,46 @@ header {
 .product-2 {
     background: url("../pictures/breasy-background.png") center center / 90% auto no-repeat;
     background-color: #000;
-    height: 650px;
+    height: 100vh;
+    z-index: -1;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    gap: 30px;
+    img {
+        margin-top: 1rem;
+        &.fleche-left {
+            transform: translateX(30%)
+        }
+        &.fleche-right {
+            transform: translateX(-30%)
+        }
+    }
+    p {
+        color: #fff;
+        font-family: cofo-sans-mono-variable, sans-serif;
+        font-size: 24px;
+        line-height: 150%; /* 36px */
+        letter-spacing: -0.528px;
+    }
+    .left-top {
+        position: relative;
+        left: 10%;
+    }
+    .right-top {
+        position: relative;
+        right: 5%;
+        text-align: right;
+    }
+    .left-bottom {
+        position: relative;
+        left: 5%;
+    }
+    .right-bottom {
+        position: relative;
+        right: 10%;
+        text-align: right;
+    }
 }
 .stats {
     display: flex;
@@ -429,6 +470,7 @@ header {
 .continue {
     background-color: #000;
     text-align: center;
+    z-index: 3;
     h2 {
         color: #fff;
     }
@@ -441,6 +483,7 @@ header {
     padding-left: 0;
     padding-right: 0;
     text-align: center;
+    z-index: 3;
     h2 {
         color: $primary;
     }
@@ -500,6 +543,7 @@ header {
 }
 .testimonial {
     background-color: $background;
+    z-index: 3;
     h2 {
         color: $primary;
     }
@@ -589,6 +633,7 @@ header {
     gap: 32px;
     align-items: center;
     justify-content: center;
+    z-index: 3;
     h2, p {
         color: #fff;
     }
