@@ -9,128 +9,152 @@
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&display=swap" rel="stylesheet">
-    <title>Hackaton</title>
+    <script src="https://unpkg.com/split-type"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.11.4/gsap.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.11.4/ScrollTrigger.min.js"></script>
+    <title>Breasy</title>
 </head>
 <body>
     <header>
+        <nav>
+            <ul>
+                <li><a href="#product">Produits</a></li>
+                <li><a href="#stats">Avantages</a></li>
+                <li><a href="#flavour">Goûts</a></li>
+                <li><a href="#testimonial">Témoignages</a></li>
+            </ul>
+        </nav>
         <img src="assets/pictures/logo.svg" alt="logo">
+        <button class="button white"><span>Commander maintenant</span></button>
     </header>
     <main>
-        <div id="loader" class="loader">
-            <button class="button"><span>Entrer</span></button>
-        </div>
+        <!-- <div id="loader" class="loader">
+            <img src="assets/pictures/logo.svg" alt="logo" class="logo">
+            <svg id="loader-poumons" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 400 400">
+                <path class="border" d="M196.54,186.38c-.08.15-.12.33-.1.51.21,2.52,1.72,22.53-2.85,36.01-1.8,6.43-3.31,9.81-1.1,17.68s2.3,22.55-1.52,31.59c-.04.11-.07.21-.07.33,0,1.34-.15,10.44-3.1,15.84-3.18,5.84-7.88,10.9-24.31,12.51s-29.83,1.61-44.47,8.77-22.93,2.83-23.61,2.49c-.03-.01-.05-.03-.08-.04-.43-.26-4.61-2.95-5.89-9.86s-.05-59.13,0-61.09c0-.04,0-.07.01-.11.17-1.05,2.73-16.51,3.33-23.91s2.96-15.07,2.96-15.07c0,0,8.9-33.64,23.27-51.6s17.19-31.3,46.94-42.07c14.88-5.13,20.78,8.72,20.01,17.7-.68,7.98,5.73,38.68,7.16,45.39.19.9,1.44.98,1.74.11.34-.99.69-2.64.97-5.34.85-8.18.37-56.45.32-60.86,0-.21-.08-.41-.21-.57l-2.13-2.53c-.13-.16-.21-.36-.21-.56l-.14-5.44c0-.33-.21-.62-.5-.79-.49-.28-1.17-.97-1.11-2.68.1-2.65-1.74-13.23-2.32-15.27-.33-1.16.09-1.52.51-1.61.39-.09.65-.47.65-.88l-.06-5.48c0-.21-.08-.42-.22-.58-1.05-1.2-5.38-6.5-.08-6.24,2.54.71,4.19,1.47,5.19,2.05.58.33,1.32-.04,1.36-.71.18-2.73,1.19-7.67,6.41-5.18.29.14.64.13.91-.05,1.23-.84,4.9-2.83,6.42,1.85.03.09.05.2.05.3v3.22c0,.66.67,1.09,1.27.83,3.24-1.42,11.18-4.45,5.39,2.84-.12.15-.19.33-.2.52l-.35,6.41c-.02.32.14.6.39.8.41.31.89,1.02.38,2.57.2,2.74-1.92,14.15-3.51,17.57-.05.11-.08.23-.08.35-.02,1.11-.15,4.85-.19,5.91,0,.19-.07.36-.18.51l-2.34,3.12c-.12.16-.18.35-.18.54l-.02,53.58c0,.86,1.08,1.24,1.61.57,1.97-2.46,5.38-6.53,8.22-8.95.23-.2.35-.48.31-.78-.41-3.66-2.77-27.49,3.4-35.87s17.69-6.25,18.45-6.07c.03,0,.05.01.08.02,1.45.48,44.7,15.32,60.4,74.85,11.61,45.16,8.87,55.4,8.34,56.79-.05.13-.07.25-.06.39.31,3.31,4.1,45.47-.57,70.12,0,.04-.02.08-.03.12-.89,2.8-4.34,11.42-11.19,9.14s-24.38-13.47-39.59-15.8c-.05,0-.08-.01-.13-.01-1.5-.02-29.74-.52-37.01-8.91s-6.36-45.43-6.32-46.53c0-.02,0-.04,0-.06l1.98-20.61c.02-.21-.03-.42-.15-.6-1.47-2.14-11.2-17.44-11.31-46.11,0-.31-.15-.6-.42-.76-1.39-.84-6.03-2.75-10.48,5.71Z"/>
+            </svg>
+            <button id="button-enter" class="button white"><span>Entrer</span></button>
+        </div> -->
         <div class="chat-container" id="chatContainer">
-            <audio id="chatbotSound" src="assets/sound/notif.mp3" preload="auto"></audio>
-            <!-- <div class="chat-header">
-                <div class="profil"><img src="assets/pictures/icon-bob.svg" alt="Photo de profil Bob"></div>
-                <p>Bob</p>
-            </div> -->
+            <audio id="chatbotSound1" src="assets/sound/cough1.mp3" preload="auto"></audio>
+            <audio id="chatbotSound2" src="assets/sound/cough2.mp3" preload="auto"></audio>
+            <audio id="chatbotSound3" src="assets/sound/cough3.mp3" preload="auto"></audio>
             <div class="chat-body">
                 <div class="chat-messages" id="chatMessages">
                     <div class="bot-message">Hello! Je suis Bob. Comment puis-je t’aider ?</div>
                 </div>
                 <div class="profil"><img src="assets/pictures/icon-bob-stroke-black.svg" alt="Photo de profil Bob"></div>
             </div>
-            <!-- <div class="chat-footer">
-                <input type="text" id="userInput" placeholder="Écrivez votre message..."/>
-                <button class="button"><span>Envoyer</span></button>
-            </div> -->
         </div>
         <section class="hero">
-            <h1>Inhalo-cigarette Breasy</h1>
-            <p class="subtitle">(Breath easy, smoke hard)</p>
+            <h1 animate>Inhalo-cigarette Breasy</h1>
+            <p class="subtitle" animate>(Breath easy, smoke hard)</p>
             <div class="img"></div>
         </section>
-        <section class="product">
-            <h2>Découvrez Breasy</h2>
-            <p class="subtitle">La première inhalo-cigarette<br>qui révolutionne le plaisir de fumer</p>
+        <section class="product" id="product">
+            <h2 animate>Découvrez Breasy</h2>
+            <p class="subtitle" animate>La première inhalo-cigarette<br>qui révolutionne le plaisir de fumer</p>
             <div class="content">
-                <p>Fini les choix difficiles entre plaisir et santé : Breasy vous offre une expérience de fumée équilibrée, alliant bien-être respiratoire et plaisir sans compromis.</p>
+                <p animate>Fini les choix difficiles entre plaisir et santé : Breasy vous offre une expérience de fumée équilibrée, alliant bien-être respiratoire et plaisir sans compromis.</p>
                 <button class="button"><span>Ça existe vraiment</span></button>
             </div>
         </section>
         <section class="product-2">
 
         </section>
-        <section class="stats">
+        <section class="stats" id="stats">
             <div class="content">
-                <div class="item">
+                <div class="item left">
                     <div class="item-content">
-                       <div class="stat">10%</div>
+                       <div class="stat" animate>10%</div>
                         <div class="text">
-                            <h3>Population française</h3>
-                            <p>Environ 10 % de la population française est affectée par l'asthme, <b>soit 10 000 personnes</b></p>
+                            <h3 animate>Population française</h3>
+                            <p animate>Environ 10 % de la population française est affectée par l'asthme, <b>soit 10 000 personnes</b></p>
                         </div>
                     </div>
-                    <div class="buttons">
-                        <button class="button"><span>Je suis confus</span></button>
-                        <button class="button secondary"><span>WTF</span></button>
-                    </div>
                 </div>
-                <!-- <div class="item">
+                <div class="item right">
                     <div class="stat">10%</div>
                     <div class="text">
                         <h3>Population française</h3>
                         <p>Environ 10 % de la population française est affectée par l'asthme, <b>soit 10 000 personnes</b></p>
                     </div>
-                    
                 </div>
-                <div class="item">
+                <div class="item left">
                     <div class="stat">10%</div>
                     <div class="text">
                         <h3>Population française</h3>
                         <p>Environ 10 % de la population française est affectée par l'asthme, <b>soit 10 000 personnes</b></p>
                     </div>
-                </div> -->
+                </div>
             </div>
-            <div class="img"></div>
+            <div class="buttons">
+                <button class="button"><span>Je suis confus</span></button>
+                <button class="button secondary"><span>WTF</span></button>
+            </div>
         </section>
-        <section class="hope">
+        <section class="hope" id="hope">
             <h2>L'espoir d'un souffle meilleur</h1>
-            <p class="subtitle">Découvrez l’ensemble de nos saveurs disponnibles</p>
-            <div class="content">
-                <div class="text">
-                    <p>Breasy est bien plus qu'un simple produit. L'idée a germé il y a des années, inspirée par des souvenirs intenses et profondément personnels. Mon grand-père, fumeur depuis toujours et asthmatique acharné, avait ce rituel quotidien : d'un côté, sa cigarette, de l'autre, sa ventoline posée sur la table.</p>
-                    <p>Entre chaque bouffée de tabac, il inspirait ce qu’il appelait "son souffle de secours". J’entend encore ma grand mère lui dire : “Il faut que tu arrêtes de fumer Serge !”. À mes yeux, ces deux objets formaient un symbole de sa résilience, de son courage, de son attachement à chaque inspiration. Mais c’est bien plus tard que Breasy est vraiment né.</p>
-                        
-                </div>
-                <img src="assets/pictures/pdg.jpeg" alt="Photo du pdg" class="pdg">
-            </div>
+            <p class="subtitle">Du cancer à Breasy</p>
             <div class="content left">
                 <div class="text">
-                    <p>En arrivant à l’université, j’ai rencontré celui qui allait devenir mon colocataire et, un jour, mon associé : Marc. Nous partagions tout, des longues nuits à réviser jusqu'aux pauses cigarette sur le balcon. Mais quelques années plus tard, Marc a aussi été frappé par cette réalité que trop de gens connaissent. Le cancer. Ensemble, nous avons voulu créer un hommage, quelque chose qui incarne la volonté de respirer librement, sans compromis.</p>
-                    <p>Breasy, c’est ce mélange unique, cet équilibre entre plaisir et espoir. C’est bien plus qu'un produit. C'est une nouvelle façon de savourer chaque souffle.</p>
+                    <p>Breazy est bien plus qu'un simple produit. L'idée a germé il y a des années, inspirée par des souvenirs intenses et profondément personnels. </p>
+                        
                 </div>
+                <img src="assets/pictures/pdg.jpg" alt="Photo du pdg" class="pdg">
             </div>
-                
+            <div class="content">
+                <div class="text">
+                    <p>Mon grand-père, fumeur depuis toujours et asthmatique acharné, avait ce rituel quotidien : d'un côté, sa cigarette, de l'autre, sa ventoline posée sur la table. </p>
+                </div>
+
+                </div>
+                <p class="center">Entre chaque bouffée de tabac, il inspirait ce qu’il appelait "son souffle de secours". J’entend encore ma grand mère lui dire : “Il faut que tu arrêtes de fumer Serge !”.
+                À mes yeux, ces deux objets formaient un symbole de sa résilience, de son courage, de son attachement à chaque inspiration. Mais c’est bien plus tard que Breazy est vraiment né.</p>
             </div>
             <div class="buttons">
                 <button class="button"><span>Je n'y crois pas</span></button>
                 <button class="button secondary"><span>Non</span></button>
             </div>
         </section>
-        <section class="flavour">
+        <section class="continue">
+            <h2>Continuer de <b>fumer</b> quelque<br> soit votre état de <b>santé</b>...</h2>
+            <button class="button white"><span>Commander maintenant</span></button>
+        </section>
+        <section class="flavour" id="flavour">
             <h2>Fumez, profitez et savourez</h2>
             <p class="subtitle">Découvrez l’ensemble de nos saveurs disponibles</p>
             <div class="container">
-                <div class="item">
-                    <h4>Breasy Pamplemousse</h4>
-                    <img src="" alt="">
-                    <button class="button">Commandez le produit</button>
+                <div class="item flavour-item" id="cerise">
+                    <video class="smoke-video" muted loop>
+                        <source src="assets/videos/fumee.mp4" type="video/mp4">
+                        Votre navigateur ne prend pas en charge la vidéo.
+                    </video>
+                    <h4>Breasy Cerise</h4>
+                    <img src="assets/pictures/cerise-1.png" alt="Goût cerise">
+                    <button class="button black"><span>Commandez le produit</span></button>
                 </div>
-                <div class="item">
+                <div class="item flavour-item" id="gum">
+                    <video class="smoke-video" muted loop>
+                        <source src="assets/videos/fumee.mp4" type="video/mp4">
+                        Votre navigateur ne prend pas en charge la vidéo.
+                    </video>
                     <h4>Breasy'Gum</h4>
-                    <img src="" alt="">
-                    <button class="button">Commandez le produit</button>
+                    <img src="assets/pictures/bubblegum-1.png" alt="Goût Gum">
+                    <button class="button black"><span>Commandez le produit</span></button>
                 </div>
-                <div class="item">
+                <div class="item flavour-item" id="goudron">
+                    <video class="smoke-video" muted loop>
+                        <source src="assets/videos/fumee.mp4" type="video/mp4">
+                        Votre navigateur ne prend pas en charge la vidéo.
+                    </video>
                     <h4>Breasy Goudron</h4>
-                    <img src="" alt="">
-                    <button class="button">Commandez le produit</button>
+                    <img src="assets/pictures/goudron-1.png" alt="Goût Goudron">
+                    <button class="button black"><span>Commandez le produit</span></button>
                 </div>
             </div>
         </section>
-        <section class="testimonial">
+        <section class="testimonial" id="testimonial">
             <h2>Ils ont tous pu continuer à fumer</h2>
             <div class="carousel-frame">
                 <img src="assets/pictures/left-arrow.svg" alt="Flèche gauche" class="arrow left">
@@ -156,7 +180,7 @@
                             </div>
                             <p>J’utilise Breasy depuis 2 ans maintenant et ça a changé ma vie !! Mon fils asthmatique peut prendre exemple sur sa maman et ne quitte plus sa ventoline.</p>
                             <div class="profil">
-                                <div class="img"></div>
+                                <div class="img"><img src="assets/pictures/profil1.jpg" alt="avis 1"></div>
                                 <p class="name">Sophie, 34 ans</p>
                             </div>
                         </div>
@@ -176,11 +200,11 @@
                                 </svg>
                                 <svg xmlns="http://www.w3.org/2000/svg" width="40" height="41" viewBox="0 0 40 41" fill="none">
                                     <path d="M9.7085 35.2541L12.4168 23.5457L3.3335 15.6707L15.3335 14.6291L20.0002 3.5874L24.6668 14.6291L36.6668 15.6707L27.5835 23.5457L30.2918 35.2541L20.0002 29.0457L9.7085 35.2541Z" fill="#4D636A" fill-opacity="0.46"/>
-                                    </svg>
+                                </svg>
                             </div>
                             <p>Depuis mon diagnostic du cancer du poumon je n’arrivais plus à finir une cigarette sans m’étouffer. Grâce à Breasy je peux de nouveau fumer mon paquet de camel quotidien. Un vrai bonheur. Merci Breasy :-)</p>
                             <div class="profil">
-                                <div class="img"></div>
+                                <div class="img"><img src="assets/pictures/profil2.avif" alt="avis 2"></div>
                                 <p class="name">Gérard, 56 ans</p>
                             </div>
                         </div>
@@ -204,7 +228,7 @@
                             </div>
                             <p>Je suis asthmatique depuis tout petit, et je n’avais jamais osé fumer. Avec Breasy ça s’est fait tout seul. Je peux fumer autant que je veux sans tousser.</p>
                             <div class="profil">
-                                <div class="img"></div>
+                                <div class="img"><img src="assets/pictures/profil3.jpg" alt="avis 3"></div>
                                 <p class="name">Damien, 30 ans</p>
                             </div>
                         </div>
@@ -228,7 +252,7 @@
                             </div>
                             <p>g commencé a fumé avec ce truk et c tro cool je vais jamais arrété</p>
                             <div class="profil">
-                                <div class="img"></div>
+                                <div class="img"><img src="assets/pictures/profil4.jpeg" alt="avis 4"></div>
                                 <p class="name">Éloïse, 12 ans</p>
                             </div>
                         </div>
@@ -248,12 +272,12 @@
                                 </svg>
                                 <svg xmlns="http://www.w3.org/2000/svg" width="40" height="41" viewBox="0 0 40 41" fill="none">
                                     <path d="M9.7085 35.2541L12.4168 23.5457L3.3335 15.6707L15.3335 14.6291L20.0002 3.5874L24.6668 14.6291L36.6668 15.6707L27.5835 23.5457L30.2918 35.2541L20.0002 29.0457L9.7085 35.2541Z" fill="#4D636A" fill-opacity="0.46"/>
-                                    </svg>
+                                </svg>
                             </div>
                             <p>J’ai découvert cette magnifique sensation de pouvoir fumer en toute sérénité. C’est une super idée !</p>
                             <div class="profil">
-                                <div class="img"></div>
-                                <p class="name">Hecore, 40 ans</p>
+                                <div class="img"><img src="assets/pictures/profil5.jpg" alt="avis 5"></div>
+                                <p class="name">Hector, 40 ans</p>
                             </div>
                         </div>
                     </div>
@@ -266,10 +290,10 @@
         <div class="top">
             <nav>
                 <ul>
-                    <li><a href="#">Produits</a></li>
-                    <li><a href="#">Avantages</a></li>
-                    <li><a href="#">Goûts</a></li>
-                    <li><a href="#">Témoignages</a></li>
+                    <li><a href="#product">Produits</a></li>
+                    <li><a href="#stats">Avantages</a></li>
+                    <li><a href="#flavour">Goûts</a></li>
+                    <li><a href="#testimonial">Témoignages</a></li>
                 </ul>
             </nav>
             <div class="social-link">
@@ -291,8 +315,5 @@
         </div>
     </footer>    
     <script src="assets/js/index.js"></script>
-    <script src="https://unpkg.com/split-type"></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.11.4/gsap.min.js"></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.11.4/ScrollTrigger.min.js"></script>
 </body>
 </html>

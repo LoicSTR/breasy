@@ -47,6 +47,24 @@ body .button.secondary {
 body .button.secondary::before {
   background-color: #59326F;
 }
+body .button.white {
+  border: solid 1px #fff;
+  color: #fff;
+}
+body .button.white:hover {
+  color: #000;
+}
+body .button.white::before {
+  background-color: #fff;
+}
+body .button.black {
+  border: none;
+  background-color: #000;
+  color: #fff;
+}
+body .button.black::before {
+  background-color: #3E3E3E;
+}
 body .button::before {
   content: "";
   position: absolute;
@@ -81,7 +99,7 @@ body h1 {
   letter-spacing: -1.6px;
 }
 body h2 {
-  color: rgba(77, 99, 106, 0.46);
+  color: #3F6F7F;
   font-size: 3rem;
   text-align: center;
   margin-bottom: 10px;
@@ -98,23 +116,40 @@ body h4 {
 }
 body .subtitle {
   font-size: 30px;
-  font-weight: 700;
+  font-weight: 400;
   line-height: 150%;
-  color: #3F6F7F;
 }
 body p {
   line-height: 150%;
 }
 
 header {
-  position: absolute;
+  position: fixed;
   top: 0;
   left: 0;
   right: 0;
   background-color: #000;
   height: 60px;
-  padding: 15px;
+  padding: 15px 50px;
   text-align: center;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  z-index: 999;
+}
+header nav {
+  font-family: "cofo-sans-mono-variable", sans-serif;
+}
+header nav ul {
+  list-style: none;
+  display: flex;
+  gap: 22px;
+}
+header nav ul li a {
+  color: #fff;
+}
+header nav ul li a:hover {
+  text-decoration: underline;
 }
 header img {
   height: 100%;
@@ -126,11 +161,38 @@ header img {
   left: 0;
   width: 100%;
   height: 100%;
-  background-color: rgb(255, 255, 255);
+  background-color: #000;
   display: flex;
+  flex-direction: column;
   justify-content: center;
   align-items: center;
   z-index: 9999;
+}
+.loader img.logo {
+  width: 30%;
+  height: auto;
+}
+.loader #loader-poumons {
+  width: 300px;
+  height: 300px;
+  overflow: hidden;
+}
+.loader .border {
+  fill: none;
+  stroke: #fff;
+  stroke-width: 4;
+  animation: loading 3s linear;
+}
+@keyframes loading {
+  0% {
+    fill: #fff;
+  }
+  100% {
+    fill: #000;
+  }
+}
+.loader #button-enter {
+  visibility: hidden;
 }
 
 .chat-container {
@@ -272,8 +334,10 @@ header img {
   text-align: center;
 }
 .hope .content {
-  width: 50%;
+  font-family: "cofo-sans-mono-variable", sans-serif;
+  width: 30%;
   margin-top: 80px;
+  margin-bottom: 300px;
   margin-right: 0;
   margin-left: auto;
   display: flex;
@@ -296,17 +360,35 @@ header img {
   height: 688px;
   justify-content: end;
 }
+.hope .center {
+  font-family: "cofo-sans-mono-variable", sans-serif;
+  margin: auto;
+  width: 50%;
+  text-align: center;
+}
 .hope .buttons {
   justify-content: center;
   margin-top: 80px;
 }
 
-.flavour {
+.continue {
   background-color: #000;
   text-align: center;
 }
-.flavour h2 {
+.continue h2 {
   color: #fff;
+}
+.continue .button {
+  margin-top: 40px;
+}
+
+.flavour {
+  padding-left: 0;
+  padding-right: 0;
+  text-align: center;
+}
+.flavour h2 {
+  color: #3F6F7F;
 }
 .flavour .subtitle {
   color: #8E979B;
@@ -315,15 +397,40 @@ header img {
   margin-top: 5rem;
   width: 100%;
   display: flex;
-  gap: 50px;
 }
 .flavour .container .item {
-  padding: 1rem 3rem;
+  padding: 24px 0;
   display: flex;
   flex-direction: column;
-  gap: 40px;
+  align-items: center;
   width: 33.3333333333%;
-  height: 500px;
+  height: auto;
+}
+.flavour .container .item .smoke-video {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  transform: translate(-50%, -50%);
+  display: none;
+}
+.flavour .container .item:hover .smoke-video {
+  display: block;
+}
+.flavour .container .item:hover .button {
+  visibility: hidden;
+  pointer-events: none;
+}
+.flavour .container .item#cerise {
+  background-color: #792636;
+}
+.flavour .container .item#gum {
+  background-color: #59326F;
+}
+.flavour .container .item#goudron {
+  background-color: #3F6F7F;
 }
 .flavour .container .item h4 {
   color: #fff;
@@ -332,16 +439,6 @@ header img {
   width: 100%;
   height: 100%;
   object-fit: cover;
-}
-.flavour .container .item button {
-  border-color: #fff;
-  color: #fff;
-  margin: auto;
-  align-self: flex-start;
-}
-.flavour .container .item button:hover {
-  background-color: #fff;
-  color: #000;
 }
 
 .testimonial h2 {
@@ -356,10 +453,20 @@ header img {
   width: 80px;
   height: 80px;
   cursor: pointer;
+  transition: transform 0.5s ease;
 }
 .testimonial .carousel-frame .arrow.disabled {
   opacity: 0.46;
   cursor: auto;
+}
+.testimonial .carousel-frame .arrow.disabled:hover {
+  transform: none;
+}
+.testimonial .carousel-frame .arrow.left:hover {
+  transform: translateX(-5px);
+}
+.testimonial .carousel-frame .arrow.right:hover {
+  transform: translateX(5px);
 }
 .testimonial .carousel-frame .content {
   width: 100% s;
@@ -393,8 +500,13 @@ header img {
   width: 100px;
   height: 100px;
   border-radius: 50%;
-  background-color: #fff;
   margin-bottom: 1rem;
+  overflow: hidden;
+}
+.testimonial .carousel-frame .content .carousel .item .profil .img img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
 }
 .testimonial .carousel-frame .content .carousel .item .profil .name {
   font-family: "cofo-sans-mono-variable", sans-serif;
@@ -426,6 +538,9 @@ footer .top nav ul {
 footer .top nav ul li a {
   color: #fff;
 }
+footer .top nav ul li a:hover {
+  text-decoration: underline;
+}
 footer .top .social-link {
   display: flex;
   gap: 22px;
@@ -453,6 +568,9 @@ footer .bottom a, footer .bottom p {
   text-decoration-line: none;
 }
 footer .bottom a {
+  text-decoration: none;
+}
+footer .bottom a:hover {
   text-decoration: underline;
 }
 
