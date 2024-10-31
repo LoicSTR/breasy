@@ -80,7 +80,18 @@ function sendMessage(text) {
   messageElement.innerHTML = text;
   chatbotMessages.appendChild(messageElement);
   chatbotMessages.scrollTop = chatbotMessages.scrollHeight;
-  playSound(chatbotSound3);
+
+  const messages = chatbotMessages.getElementsByClassName("bot-message");
+  if (messages.length > 3) {
+    // Rendre invisibles les premiers messages au-delà du troisième
+    for (let i = 0; i < messages.length; i++) {
+      if (i < messages.length - 3) {
+        messages[i].style.display = 'none';  // Cache les premiers messages
+      }
+    }
+  }
+
+  playSound(chatbotSound);
 }
 
 function sendMessagesAtIntervals(messagesToSend) {
@@ -141,17 +152,200 @@ const loaderPoumons = document.getElementById("loader-poumons");
 
 window.addEventListener("scroll", handleScroll);
 
-const itemsGouts = document.querySelectorAll('.flavour.item');
 
-items.forEach(item => {
-    const smokeVideo = item.querySelector('.smoke-video');
 
-    item.addEventListener('mouseenter', () => {
-        smokeVideo.play();
-    });
 
-    item.addEventListener('mouseleave', () => {
-        smokeVideo.pause();
-        smokeVideo.currentTime = 0;
-    });
+//changement de couleur
+
+ScrollTrigger.create({
+  trigger: ".product-2", // Le trigger est votre section spécifique
+  start: "top 75%", // Quand le haut de la section atteint le haut de la fenêtre
+  end: "center top", // Quand le bas de la section atteint le haut de la fenêtre
+  onEnter: () => document.body.style.backgroundColor = 'black', // Lorsque vous entrez dans la section
+  onLeave: () => document.body.style.backgroundColor = 'white', // Lorsque vous sortez de la section
+  onEnterBack: () => document.body.style.backgroundColor = 'black', // Quand vous revenez à la section
+  onLeaveBack: () => document.body.style.backgroundColor = 'white' // Quand vous partez à nouveau
 });
+ScrollTrigger.create({
+  trigger: ".continue", // Le trigger est votre section spécifique
+  start: "top 75%", // Quand le haut de la section atteint le haut de la fenêtre
+  end: "10% top", // Quand le bas de la section atteint le haut de la fenêtre
+  onEnter: () => document.body.style.backgroundColor = 'black', // Lorsque vous entrez dans la section
+  onLeave: () => document.body.style.backgroundColor = 'white', // Lorsque vous sortez de la section
+  onEnterBack: () => document.body.style.backgroundColor = 'black', // Quand vous revenez à la section
+  onLeaveBack: () => document.body.style.backgroundColor = 'white' // Quand vous partez à nouveau
+});
+
+ScrollTrigger.create({
+  trigger: ".twist", // Le trigger est votre section spécifique
+  start: "top 65%", // Quand le haut de la section atteint le haut de la fenêtre
+  end: "100% top", // Quand le bas de la section atteint le haut de la fenêtre
+  onEnter: () => document.body.style.backgroundColor = 'black', // Lorsque vous entrez dans la section
+  onLeave: () => document.body.style.backgroundColor = 'white', // Lorsque vous sortez de la section
+  onEnterBack: () => document.body.style.backgroundColor = 'black', // Quand vous revenez à la section
+  onLeaveBack: () => document.body.style.backgroundColor = 'white' // Quand vous partez à nouveau
+});
+
+
+ScrollTrigger.create({
+  trigger: ".close", // Déclenche l'effet en fonction de la section `.stats`
+  start: "top bottom", // Quand le bas de la section atteint le centre de la fenêtre
+  onEnter: () => {
+    gsap.to(".image-container", {
+      opacity: 0,           // Opacité à 0 pour faire disparaître l'élément
+      duration: .6,          // Durée de la transition en secondes
+      ease: "power2.out",   // Animation douce de la transition
+    });
+  },
+  onLeaveBack: () => {
+    gsap.to(".image-container", {
+      opacity: 1,           // Réapparition avec opacité à 1
+      duration: .6,
+      ease: "power2.out",
+    });
+  }
+});
+
+
+
+//parrallax
+gsap.registerPlugin(ScrollTrigger);
+
+  // Parallaxe du texte
+  gsap.to(".parallax-text", {
+      yPercent: -900,           // Déplace le texte vers le haut
+      ease: "none",             // Pas d'accélération pour un effet constant
+      scrollTrigger: {
+          trigger: ".parallax-section", // La section déclenche l'effet
+          start: "top bottom",          // L'effet commence quand le haut de la section entre dans la vue
+          end: "bottom top",            // L'effet termine quand le bas de la section sort de la vue
+          scrub: true                   // Le défilement est synchronisé avec le mouvement du texte
+      }
+  });
+
+  gsap.to(".parallax-text2", {
+    yPercent: -600,           // Déplace le texte vers le haut
+    ease: "none",             // Pas d'accélération pour un effet constant
+    scrollTrigger: {
+        trigger: ".parallax-section", // La section déclenche l'effet
+        start: "top bottom",          // L'effet commence quand le haut de la section entre dans la vue
+        end: "bottom top",            // L'effet termine quand le bas de la section sort de la vue
+        scrub: true                   // Le défilement est synchronisé avec le mouvement du texte
+    }
+});
+  gsap.to(".parallax-text3", {
+    yPercent: 300,           // Déplace le texte vers le haut
+    ease: "none",             // Pas d'accélération pour un effet constant
+    scrollTrigger: {
+        trigger: ".parallax-section", // La section déclenche l'effet
+        start: "top bottom",          // L'effet commence quand le haut de la section entre dans la vue
+        end: "bottom top",            // L'effet termine quand le bas de la section sort de la vue
+        scrub: true                   // Le défilement est synchronisé avec le mouvement du texte
+    }
+});
+
+  gsap.to(".parallax-text4", {
+    yPercent: -300,           // Déplace le texte vers le haut
+    ease: "none",             // Pas d'accélération pour un effet constant
+    scrollTrigger: {
+        trigger: ".parallax-section", // La section déclenche l'effet
+        start: "top bottom",          // L'effet commence quand le haut de la section entre dans la vue
+        end: "bottom top",            // L'effet termine quand le bas de la section sort de la vue
+        scrub: true                   // Le défilement est synchronisé avec le mouvement du texte
+    }
+});
+  gsap.to(".parallax-text5", {
+    yPercent: -200,           // Déplace le texte vers le haut
+    ease: "none",             // Pas d'accélération pour un effet constant
+    scrollTrigger: {
+        trigger: ".parallax-section", // La section déclenche l'effet
+        start: "top bottom",          // L'effet commence quand le haut de la section entre dans la vue
+        end: "bottom top",            // L'effet termine quand le bas de la section sort de la vue
+        scrub: true                   // Le défilement est synchronisé avec le mouvement du texte
+    }
+});
+  gsap.to(".parallax-text6", {
+    yPercent: -25,           // Déplace le texte vers le haut
+    ease: "none",             // Pas d'accélération pour un effet constant
+    scrollTrigger: {
+        trigger: ".parallax-section2", // La section déclenche l'effet
+        start: "top bottom",          // L'effet commence quand le haut de la section entre dans la vue
+        end: "bottom top",            // L'effet termine quand le bas de la section sort de la vue
+        scrub: true                   // Le défilement est synchronisé avec le mouvement du texte
+    }
+});
+  gsap.to(".parallax-text7", {
+    yPercent: -400,           // Déplace le texte vers le haut
+    ease: "none",             // Pas d'accélération pour un effet constant
+    scrollTrigger: {
+        trigger: ".parallax-section2", // La section déclenche l'effet
+        start: "top bottom",          // L'effet commence quand le haut de la section entre dans la vue
+        end: "bottom top",            // L'effet termine quand le bas de la section sort de la vue
+        scrub: true                   // Le défilement est synchronisé avec le mouvement du texte
+    }
+});
+  gsap.to(".parallax-text8", {
+    yPercent: -270,           // Déplace le texte vers le haut
+    ease: "none",             // Pas d'accélération pour un effet constant
+    scrollTrigger: {
+        trigger: ".parallax-section2", // La section déclenche l'effet
+        start: "top bottom",          // L'effet commence quand le haut de la section entre dans la vue
+        end: "bottom top",            // L'effet termine quand le bas de la section sort de la vue
+        scrub: true                   // Le défilement est synchronisé avec le mouvement du texte
+    }
+});
+  gsap.to(".parallax-text9", {
+    yPercent: -325,           // Déplace le texte vers le haut
+    ease: "none",             // Pas d'accélération pour un effet constant
+    scrollTrigger: {
+        trigger: ".parallax-section2", // La section déclenche l'effet
+        start: "top bottom",          // L'effet commence quand le haut de la section entre dans la vue
+        end: "bottom top",            // L'effet termine quand le bas de la section sort de la vue
+        scrub: true                   // Le défilement est synchronisé avec le mouvement du texte
+    }
+});
+  gsap.to(".parallax-text10", {
+    yPercent: -100,           // Déplace le texte vers le haut
+    ease: "none",             // Pas d'accélération pour un effet constant
+    scrollTrigger: {
+        trigger: ".parallax-section2", // La section déclenche l'effet
+        start: "top bottom",          // L'effet commence quand le haut de la section entre dans la vue
+        end: "bottom top",            // L'effet termine quand le bas de la section sort de la vue
+        scrub: true                   // Le défilement est synchronisé avec le mouvement du texte
+    }
+});
+  gsap.to(".parallax-text11", {
+    yPercent: -300,           // Déplace le texte vers le haut
+    ease: "none",             // Pas d'accélération pour un effet constant
+    scrollTrigger: {
+        trigger: ".parallax-section2", // La section déclenche l'effet
+        start: "top bottom",          // L'effet commence quand le haut de la section entre dans la vue
+        end: "bottom top",            // L'effet termine quand le bas de la section sort de la vue
+        scrub: true                   // Le défilement est synchronisé avec le mouvement du texte
+    }
+});
+  gsap.to(".parallax-text12", {
+    yPercent: -100,           // Déplace le texte vers le haut
+    ease: "none",             // Pas d'accélération pour un effet constant
+    scrollTrigger: {
+        trigger: ".parallax-section2", // La section déclenche l'effet
+        start: "top bottom",          // L'effet commence quand le haut de la section entre dans la vue
+        end: "bottom top",            // L'effet termine quand le bas de la section sort de la vue
+        scrub: true                   // Le défilement est synchronisé avec le mouvement du texte
+    }
+});
+
+
+gsap.registerPlugin(ScrollTrigger);
+
+        // Animation de la largeur de .contenent en fonction du défilement
+        gsap.to(".contenent", {
+            width: "100%", // Largeur finale à 100%
+            scrollTrigger: {
+                trigger: ".right-top", // Déclencheur basé sur le conteneur
+                start: "top 75%", // Commencer à 80% de la fenêtre
+                end: "80% Top", // Fin de l'animation à 50%
+                scrub: true, // Scrubbing lié au défilement
+                markers: false // Pour le débogage : afficher les marqueurs
+            }
+        });

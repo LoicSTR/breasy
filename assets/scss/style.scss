@@ -19,6 +19,7 @@ html, body {
 body {
     background-color: $background;
     font-family: 'inter', sans-serif;
+    transition: background-color 0.5s; /* Ajoute une transition pour l'effet */
     .img {
         background-color: #fff;
         height: 400px;
@@ -37,7 +38,7 @@ body {
         margin-top: 2rem;
         display: flex;
         gap: 1rem;
-        justify-content: center;
+        justify-content: left;
     }
     .button {
         position: relative;
@@ -333,22 +334,33 @@ header {
 }
 .product-2 {
     background: url("../pictures/breasy-background.png") center center / 90% auto no-repeat;
-    background-color: #000;
+    background-color: none;
     height: 100vh;
     z-index: -1;
     display: flex;
     flex-direction: column;
     justify-content: center;
     gap: 30px;
-    img {
-        margin-top: 1rem;
-        &.fleche-left {
-            transform: translateX(30%)
-        }
-        &.fleche-right {
-            transform: translateX(-30%)
+    .all{
+        width: 100%;
+        display: flex;
+        justify-content: flex-end;
+    }
+    .contenent {
+        width: 0%; /* Largeur initiale */
+        overflow: hidden;
+        transition: width .2s; /* Transition douce pour la largeur */
+        img {
+            margin-top: 1rem;
+            &.fleche-left {
+                transform: translateX(30%)
+            }
+            &.fleche-right {
+                transform: translateX(-30%)
+            }
         }
     }
+    
     p {
         color: #fff;
         font-family: cofo-sans-mono-variable, sans-serif;
@@ -468,7 +480,7 @@ header {
     }
 }
 .continue {
-    background-color: #000;
+    background-color: none;
     text-align: center;
     z-index: 3;
     h2 {
@@ -479,11 +491,10 @@ header {
     }
 }
 .flavour {
-    background-color: $background;
+    background-color: none;
     padding-left: 0;
     padding-right: 0;
     text-align: center;
-    z-index: 3;
     h2 {
         color: $primary;
     }
@@ -495,25 +506,23 @@ header {
         width: 100%;
         display: flex;
         .item {
-            padding: 24px 0;
-            display: flex;
-            flex-direction: column;
-            align-items: center;
             width: calc(100% / 3);
             height: auto;
+            overflow: hidden;
+            position: relative;
             .smoke-video {
                 position: absolute;
-                top: 50%;
-                left: 50%;
+                left: 0;
                 width: 100%;
                 height: 100%;
                 object-fit: cover;
-                transform: translate(-50%, -50%);
-                display: none;
+                mix-blend-mode: screen;
+                visibility: hidden;
+                opacity: 0.3;
             }
             &:hover {
                .smoke-video {
-                    display: block;
+                    visibility: visible;
                 }
                 .button {
                     visibility: hidden;
@@ -530,20 +539,29 @@ header {
             &#goudron {
                 background-color: #3F6F7F;
             }
-            h4 {
-                color: #fff
+            .content {
+                position: relative;
+                padding: 24px 0;
+                display: flex;
+                flex-direction: column;
+                align-items: center;
+                h4 {
+                    color: #fff
+                }
+                img {
+                    width: 100%;
+                    height: 100%;
+                    object-fit: cover;
+                }
             }
-            img {
-                width: 100%;
-                height: 100%;
-                object-fit: cover;
-            }
+            
         }
     }
 }
 .testimonial {
-    background-color: $background;
-    z-index: 3;
+    background-color: none;
+    position: relative;
+    z-index:3;
     h2 {
         color: $primary;
     }
@@ -598,6 +616,7 @@ header {
                         font-weight: 500;
                         line-height: 150%;
                         letter-spacing: -0.88px;
+                        text-align: center;
                     }
                     .profil {
                         .img {
@@ -626,14 +645,14 @@ header {
     
 }
 .twist {
-    background-color: #000;
+    background-color: none;
     height: 100vh;
     display: flex;
     flex-direction: column;
     gap: 32px;
     align-items: center;
     justify-content: center;
-    z-index: 3;
+ 
     h2, p {
         color: #fff;
     }

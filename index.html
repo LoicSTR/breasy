@@ -54,9 +54,9 @@
             <h1 class="animate first">Inhalo-cigarette Breasy</h1>
             <p class="subtitle animate first">(Breath easy, smoke hard)</p>
         </section>
-        <section class="product" id="product">
-            <div class="flou"><h2 class="animate first">Découvrez Breasy</h2>
-            <p class="subtitle animate first">La première inhalo-cigarette<br>qui révolutionne le plaisir de fumer</p></div>
+        <section class="product parallax-section" id="product">
+            <div class="flou"><h2 class="animate first parallax-text">Découvrez Breasy</h2>
+            <p class="subtitle animate first parallax-text2">La première inhalo-cigarette<br>qui révolutionne le plaisir de fumer</p></div>
             
             <div class="content">
                 <p class="animate">Fini les choix difficiles entre plaisir et santé : Breasy vous offre une expérience de fumée équilibrée, alliant bien-être respiratoire et plaisir sans compromis.</p>
@@ -66,19 +66,31 @@
         <section class="product-2" >
             <div class="left-top">
                 <p class="animate left">Apaise les voies<br>respiratoires</p>
-                <img src="assets/pictures/fleche-left.svg" alt="Flèche gauche" class="fleche-left">
+                <div class="contenent">
+                    <img src="assets/pictures/fleche-left.svg" alt="Flèche droite" class="fleche-left ">
+                </div>
             </div>
             <div class="right-top">
                 <p class="animate">Combine le goût mythique<br>du tabac et la fraicheur<br>de la ventoline</p>
-                <img src="assets/pictures/fleche-right.svg" alt="Flèche droite" class="fleche-right">
+                <div class="all">
+                    <div class="contenent">
+                        <img src="assets/pictures/fleche-right.svg" alt="Flèche droite" class="fleche-right ">
+                    </div>
+                </div>
             </div>
             <div class="left-bottom">
                 <p class="animate left">Une bouffée de vie<br>à chaque instant</p>
-                <img src="assets/pictures/fleche-left.svg" alt="Flèche gauche" class="fleche-left">
+                <div class="contenent">
+                    <img src="assets/pictures/fleche-left.svg" alt="Flèche droite" class="fleche-left">
+                </div>
             </div>
             <div class="right-bottom">
                 <p class="animate">Un embout<br>filtrant innovant</p>
-                <img src="assets/pictures/fleche-right.svg" alt="Flèche droite" class="fleche-right">
+                <div class="all">
+                    <div class="contenent">
+                        <img src="assets/pictures/fleche-right.svg" alt="Flèche droite" class="fleche-right">
+                    </div>
+                </div>
             </div>
 
         </section>
@@ -140,7 +152,7 @@
                 <p class="center animate left">Entre chaque bouffée de tabac, il inspirait ce qu’il appelait "son souffle de secours". J’entend encore ma grand mère lui dire : “Il faut que tu arrêtes de fumer Serge !”.
                 À mes yeux, ces deux objets formaient un symbole de sa résilience, de son courage, de son attachement à chaque inspiration. Mais c’est bien plus tard que Breasy est vraiment né.</p>
             </div>
-            <div class="buttons">
+            <div class="buttons close">
                 <button class="button"><span>Je n'y crois pas</span></button>
                 <button class="button secondary"><span>Non</span></button>
             </div>
@@ -156,31 +168,39 @@
             <p class="subtitle animate first">Découvrez l’ensemble de nos saveurs disponibles</p>
             <div class="container">
                 <div class="item flavour-item" id="cerise">
-                    <video class="smoke-video" muted loop>
+                    <video class="smoke-video" autoplay muted loop>
                         <source src="assets/videos/fumee.mp4" type="video/mp4">
                         Votre navigateur ne prend pas en charge la vidéo.
                     </video>
-                    <h4>Breasy Cerise</h4>
-                    <img src="assets/pictures/cerise-1.png" alt="Goût cerise">
-                    <button class="button black"><span>Commandez le produit</span></button>
+                    <div class="content">
+                       <h4>Breasy Cerise</h4>
+                        <img src="assets/pictures/cerise-1.png" alt="Goût cerise">
+                        <button class="button black"><span>Commandez le produit</span></button> 
+                    </div>
                 </div>
                 <div class="item flavour-item" id="gum">
-                    <video class="smoke-video" muted loop>
+                    <video class="smoke-video" autoplay muted loop>
                         <source src="assets/videos/fumee.mp4" type="video/mp4">
                         Votre navigateur ne prend pas en charge la vidéo.
                     </video>
-                    <h4>Breasy'Gum</h4>
-                    <img src="assets/pictures/bubblegum-1.png" alt="Goût Gum">
-                    <button class="button black"><span>Commandez le produit</span></button>
+                    <div class="content">
+                        <h4>Breasy'Gum</h4>
+                        <img src="assets/pictures/bubblegum-1.png" alt="Goût Gum">
+                        <button class="button black"><span>Commandez le produit</span></button>
+                     </div>
+                    
                 </div>
                 <div class="item flavour-item" id="goudron">
-                    <video class="smoke-video" muted loop>
+                    <video class="smoke-video" autoplay muted loop>
                         <source src="assets/videos/fumee.mp4" type="video/mp4">
                         Votre navigateur ne prend pas en charge la vidéo.
                     </video>
-                    <h4>Breasy Goudron</h4>
-                    <img src="assets/pictures/goudron-1.png" alt="Goût Goudron">
-                    <button class="button black"><span>Commandez le produit</span></button>
+                    <div class="content">
+                        <h4>Breasy Goudron</h4>
+                        <img src="assets/pictures/goudron-1.png" alt="Goût Goudron">
+                        <button class="button black"><span>Commandez le produit</span></button>
+                    </div>
+                    
                 </div>
             </div>
         </section>
@@ -356,90 +376,99 @@
     <script src="https://unpkg.com/split-type"></script>
     
     <script>
-    let typeSplit = new SplitType('.animate', {
-      types: 'lines, words, chars',
-      tagName: 'span'
-    })
+        // Assurez-vous que SplitType est correctement inclus dans votre projet avant d'utiliser cette fonctionnalité.
+        let typeSplit = new SplitType('.animate', {
+            types: 'lines, words, chars',
+            tagName: 'span'
+        });
     
-    const buttonEnter = document.getElementById('button-enter');
-
-    buttonEnter.addEventListener("click", () => {
-        gsap.registerPlugin(ScrollTrigger);
-
-        // Animer les textes
-        document.querySelectorAll('.animate.first').forEach((element) => {
-            gsap.fromTo(element, {
-                opacity: 0, // Commencer à une opacité de 0
-            }, {
-                opacity: 1, // Terminer à une opacité de 1
-                duration: 1.2, // Durée de l'animation
-                ease: 'power2.out', // Type d'accélération
-                scrollTrigger: {
-                    trigger: element, // Déclencheur basé sur l'élément
-                    start: 'top 80%', // Démarrer l'animation lorsque le haut de l'élément atteint 80% de la fenêtre
-                    toggleActions: 'play none none none', // Joue l'animation uniquement une fois
-                }
+        const buttonEnter = document.getElementById('button-enter');
+    
+        buttonEnter.addEventListener("click", () => {
+            gsap.registerPlugin(ScrollTrigger);
+    
+            // Animer les textes pour les éléments avec la classe 'first'
+            document.querySelectorAll('.animate.first').forEach((element) => {
+                gsap.fromTo(element, {
+                    opacity: 0, // Commencer à une opacité de 0
+                    y: 20 // Commencer un peu en bas
+                }, {
+                    opacity: 1, // Terminer à une opacité de 1
+                    y: 0, // Retourner à la position d'origine
+                    duration: 1.2, // Durée de l'animation
+                    ease: 'power2.out', // Type d'accélération
+                    scrollTrigger: {
+                        trigger: element, // Déclencheur basé sur l'élément
+                        start: 'top 75%', // Commence l'animation quand le haut de l'élément atteint 80% de la fenêtre
+                        end: 'top 35%', // Fin de l'animation quand le haut de l'élément atteint 30% de la fenêtre
+                        toggleActions: 'play none none reverse', // Joue l'animation d'entrée et de sortie
+                        scrub: true // Scrubbing lié au défilement
+                    }
+                });
+            });
+    
+            // Animer les textes pour les éléments sans la classe 'first'
+            document.querySelectorAll('.animate:not(.first)').forEach((element) => {
+                gsap.fromTo(element, {
+                    opacity: 0, // Commencer à une opacité de 0
+                    x: element.classList.contains('left') ? -50 : 50 // Décalage à gauche ou à droite
+                }, {
+                    opacity: 1, // Terminer à une opacité de 1
+                    x: 0, // Retourner à la position d'origine
+                    duration: 1.2, // Durée de l'animation
+                    ease: 'power2.out', // Type d'accélération
+                    scrollTrigger: {
+                        trigger: element, // Déclencheur basé sur l'élément
+                        start: 'top 75%', // Commence l'animation quand le haut de l'élément atteint 80% de la fenêtre
+                        end: 'top 35%', // Fin de l'animation quand le haut de l'élément atteint 30% de la fenêtre
+                        toggleActions: 'play none none reverse', // Joue l'animation d'entrée et de sortie
+                        scrub: true // Scrubbing lié au défilement
+                    }
+                });
             });
         });
-    });
     </script>
+    
+    </script>
+    
     <script>
         gsap.registerPlugin(ScrollTrigger);
 
-        // Animer les textes
-        document.querySelectorAll('.animate:not(.first)').forEach((element) => {
-            gsap.fromTo(element, {
-                opacity: 0, // Commencer à une opacité de 0
-                x: element.classList.contains('left') ? -50 : 50, // Décalage à gauche ou à droite
-            }, {
-                opacity: 1, // Terminer à une opacité de 1
-                x: 0, // Retourner à la position d'origine
-                duration: 1.2, // Durée de l'animation
-                ease: 'power2.out', // Type d'accélération
-                scrollTrigger: {
-                    trigger: element, // Déclencheur basé sur l'élément
-                    start: 'top 80%', // Démarrer l'animation lorsque le haut de l'élément atteint 80% de la fenêtre
-                    toggleActions: 'play none none none', // Joue l'animation uniquement une fois
-                }
-            });
-        });
-    </script>
-    <script>
-        gsap.registerPlugin(ScrollTrigger);
-    
-    const totalFrames = 400; // Total de frames
-    const frames = [];
-    
-    // Charger les images dans un tableau
-    for (let i = 1; i <= totalFrames; i++) {
-        const img = new Image();
-        img.src = `Sc2/Vento${String(i).padStart(4, '0')}.png`; // Générer le nom de fichier
-        frames.push(img);
-    }
-    
-    let frameNumber = 0;
-    const fps = 30; // Frames par seconde
-    const totalScrollDistance = 4000; // Distance totale de défilement (en pixels ou unité de mesure)
+const totalFrames = 500; // Total de frames
+const frames = [];
 
-    // Animation de l'image fixe en fonction du défilement dans la section `.content`
-    gsap.to({}, {
-        scrollTrigger: {
-            trigger: ".content", // Activer l'effet de défilement sur la section `.content`
-            start: "top top",
-            end: `+=${totalScrollDistance}px`, // Fin de l'animation en fonction de la distance totale de défilement
-            scrub: true,
-            markers: false,
-            onUpdate: (self) => {
-                frameNumber = Math.min(totalFrames - 1, Math.floor(self.progress * totalFrames));
-                document.getElementById('animation').src = frames[frameNumber].src; // Changer l'image en fonction de la progression
-            }
+// Charger les images au format WebP dans un tableau
+for (let i = 1; i <= totalFrames; i++) {
+    const img = new Image();
+    img.src = `Sc2/Vento${String(i).padStart(4, '0')}.webp`; // Utiliser l'extension .webp
+    frames.push(img);
+}
+
+let frameNumber = 0;
+const fps = 30; // Frames par seconde
+const totalScrollDistance = 5250; // Distance totale de défilement
+
+// Animation de l'image fixe en fonction du défilement dans la section `.content`
+gsap.to({}, {
+    scrollTrigger: {
+        trigger: ".content", // Activer l'effet de défilement sur la section `.content`
+        start: "top top",
+        end: `+=${totalScrollDistance}px`, // Fin de l'animation en fonction de la distance totale de défilement
+        scrub: true,
+        markers: false,
+        onUpdate: (self) => {
+            frameNumber = Math.min(totalFrames - 1, Math.floor(self.progress * totalFrames));
+            document.getElementById('animation').src = frames[frameNumber].src; // Changer l'image en fonction de la progression
         }
-    });
+    }
+});
+
+// Active la première frame dès que la page est chargée
+window.onload = function() {
+    document.getElementById('animation').src = frames[0].src;
+};
+
     
-    // Active la première frame dès que la page est chargée
-    window.onload = function() {
-        document.getElementById('animation').src = frames[0].src;
-    };
     </script>
 </body>
 </html>
