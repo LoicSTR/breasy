@@ -303,6 +303,8 @@ header {
     height: 100vh;
     h1 {
         margin-bottom: 1rem;
+        font-weight: 900;
+        color: $primary;
     }
     .subtitle {
         font-size: 60px;
@@ -541,7 +543,7 @@ header {
             }
             .content {
                 position: relative;
-                padding: 24px 0;
+                padding: 40px 0;
                 display: flex;
                 flex-direction: column;
                 align-items: center;
@@ -698,6 +700,7 @@ footer {
         }
     }
     .middle {
+        height: auto;
         img {
             width: 800px;
             height: auto;
