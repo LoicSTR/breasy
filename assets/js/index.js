@@ -134,7 +134,6 @@ setTimeout(() => {
   buttonEnter.style.visibility = 'visible';
 }, 3000);
 
-
 buttonEnter.addEventListener("click", () => {
     isAudioEnabled = true;
     loader.style.display = "none";
@@ -151,8 +150,6 @@ const loaderPoumons = document.getElementById("loader-poumons");
   
 
 window.addEventListener("scroll", handleScroll);
-
-
 
 
 //changement de couleur
@@ -338,14 +335,14 @@ gsap.registerPlugin(ScrollTrigger);
 
 gsap.registerPlugin(ScrollTrigger);
 
-        // Animation de la largeur de .contenent en fonction du défilement
-        gsap.to(".contenent", {
-            width: "100%", // Largeur finale à 100%
-            scrollTrigger: {
-                trigger: ".right-top", // Déclencheur basé sur le conteneur
-                start: "top 75%", // Commencer à 80% de la fenêtre
-                end: "80% Top", // Fin de l'animation à 50%
-                scrub: true, // Scrubbing lié au défilement
-                markers: false // Pour le débogage : afficher les marqueurs
-            }
-        });
+// Animation de la largeur de .contenent en fonction du défilement
+gsap.to(".contenent", {
+    width: "100%", // Largeur finale à 100%
+    scrollTrigger: {
+        trigger: ".right-top", // Déclencheur basé sur le conteneur
+        start: "top 75%", // Commencer à 80% de la fenêtre
+        end: "80% Top", // Fin de l'animation à 50%
+        scrub: true, // Scrubbing lié au défilement
+        markers: false // Pour le débogage : afficher les marqueurs
+    }
+});
